@@ -1,0 +1,42 @@
+﻿@model IEnumerable<CloudDemo.Models.ExamModel>
+
+<a class="btn btn-primary" style="float: right;margin-bottom: 20px;" href="@Url.Action("Add")">
+    Add New
+</a>
+<table id="tblEmployee" data-export="enable" class="dt-column-search_test table table-responsive-sm table-responsive-md table-responsive-lg  table-responsive-xl table-responsive-xxl table-striped table-bordered table-sm table-hover">
+
+    <thead>
+        <tr>
+            <th data-search="enabled" data-export="enable">Exam ID</th>
+            <th data-search="enabled" data-export="enable">Type</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.id
+                </td>
+                <td>
+                    @item.type
+                </td>
+                <td>
+                    <a href='@Url.Action(action:"Solve",values:new {id = @item.id })' class="btn btn-sm btn-clean btn-icon" title="Edit">
+                        <i class="la la-edit"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts{
+
+    <script>
+        $(document).ready(function () {
+            $('#tblEmployee').DataTable();
+        });
+    </script>
+}

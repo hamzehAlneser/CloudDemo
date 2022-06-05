@@ -1,0 +1,34 @@
+﻿@model CloudDemo.Models.UsersViewModel
+
+<form asp-action="Delete" method="post">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="firstName" class="control-label required"></label>
+                <input asp-for="firstName" readonly class="form-control" />
+                <span asp-validation-for="firstName" class="text-danger form-control-sm"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="lastName" class="control-label required"></label>
+                <input asp-for="lastName" readonly class="form-control" />
+                <span asp-validation-for="lastName" class="text-danger form-control-sm"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-12">
+            <button type="submit" id="save" class="btn btn-primary">Save</button>
+            <button type="button" onclick="location.href='@Url.Action("Index")'" class="btn btn-danger">Cancel</button>
+        </div>
+    </div>
+</form>
+
+
+@section Scripts{
+
+    <script>
+        $(document).ready(function () {
+            $('#tblEmployee').DataTable();
+        });
+    </script>
+}

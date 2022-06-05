@@ -1,0 +1,27 @@
+﻿
+
+<form class="repeater" asp-action="Index" method="post">
+    <select class="form-select" name="type" aria-label="Default select example">
+        <option selected>Select Type</option>
+        <option value="1">CS</option>
+        <option value="2">SOFTWARE_ENGINEER</option>
+        <option value="3">Math</option>
+    </select>
+    <br />
+    <div data-repeater-list="Questions">
+        <div data-repeater-item>
+            <div class="form-group">
+                <label class="control-label required">Question</label>
+                <input name="QuestionDesc" class="form-control" />
+            </div>
+            <input data-repeater-delete type="button" value="Delete" />
+        </div>
+    </div>
+    <input data-repeater-create type="button" value="Add" />
+    <input type="submit" value="Save" />
+</form>
+
+
+@section Scripts {
+    <script src="~/js/repeater.js"></script>
+}

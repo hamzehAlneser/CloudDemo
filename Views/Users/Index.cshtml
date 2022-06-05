@@ -1,0 +1,43 @@
+﻿
+@model IEnumerable<CloudDemo.Models.UsersViewModel>
+
+<a class="btn btn-primary" style="float: right;margin-bottom: 20px;" href="@Url.Action("Add")">
+    Add New
+</a>
+<table id="tblEmployee" data-export="enable" class="dt-column-search_test table table-responsive-sm table-responsive-md table-responsive-lg  table-responsive-xl table-responsive-xxl table-striped table-bordered table-sm table-hover">
+
+    <thead>
+        <tr>
+            <th data-search="enabled" data-export="enable">First Name</th>
+            <th data-search="enabled" data-export="enable">Last Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.firstName
+                </td>
+                <td>
+                    @item.lastName
+                </td>
+                <td>
+                    <a href='@Url.Action(action:"Edit",values:new {id = @item.externalId })' class="btn btn-sm btn-clean btn-icon" title="Edit">
+                        <i class="la la-edit"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts{
+
+    <script>
+        $(document).ready(function () {
+            $('#tblEmployee').DataTable();
+        });
+    </script>
+}

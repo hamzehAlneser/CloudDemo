@@ -1,0 +1,15 @@
+﻿@model CloudDemo.Models.ExamModel
+<form action="Solve" method="post">
+    @{ 
+        for (int i = 0; i < Model.questions.Count; i++)
+        {
+            <h3>@Model.questions[i].question</h3>
+            <input type="hidden" name="answers[@i].questionId" value="@Model.questions[i].id" />
+            <input type="text" name="answers[@i].answer" />
+            <input type="hidden" name="answers[@i].examId" value="@Model.id" />
+        }
+    }
+    <br />
+    <br />
+    <button class="btn btn-success" type="submit">Submit</button>
+</form>

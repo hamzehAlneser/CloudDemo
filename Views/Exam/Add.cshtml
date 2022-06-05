@@ -1,0 +1,20 @@
+﻿
+<form class="repeater" asp-action="Add" method="post">
+    <br />
+    <div data-repeater-list="Questions">
+        <div data-repeater-item>
+            <div class="form-group">
+                <label class="control-label required">Question</label>
+                <input name="QuestionDesc" class="form-control" />
+            </div>
+            <input data-repeater-delete type="button" value="Delete" />
+        </div>
+    </div>
+    <input data-repeater-create type="button" value="Add" />
+    <input type="submit" value="Save" />
+</form>
+
+
+@section Scripts {
+    <script src="~/js/repeater.js"></script>
+}

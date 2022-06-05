@@ -1,0 +1,20 @@
+﻿<form action="Generate" method="post">
+    @Html.DropDownList("externalId", (IEnumerable<SelectListItem>)ViewBag.Users, null, new { @class = "form-control" })
+    <br />
+    <br />
+    <select class="form-select" name="type" aria-label="Default select example">
+        <option selected>Select Type</option>
+        <option value="1">CS</option>
+        <option value="2">SOFTWARE_ENGINEER</option>
+        <option value="3">Math</option>
+    </select>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Number of Questions</span>
+        </div>
+        <input type="text" class="form-control" name="NoOfQues" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+
+    <button class="btn btn-success" type="submit">Submit</button>
+
+</form>
